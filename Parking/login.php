@@ -1,3 +1,28 @@
+
+<?php
+session_start();
+
+if (isset($_POST['submit'])) {
+  
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+
+  $username = filter_var($username, FILTER_SANITIZE_STRING);
+  $password = filter_var($password, FILTER_SANITIZE_STRING);
+
+
+  if ($username == "admin" && password_verify($password, 'QFJzO56')) {
+    $_SESSION['username'] = $username;
+    header("Location: index.php");
+    exit();
+  } else {
+
+    $error = "Invalid username or password";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
