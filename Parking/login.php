@@ -67,7 +67,7 @@
 	</main>
 	<script>
 		function login() {
-			// Get form input values
+			// Get FROMMM input values
 			var username = document.getElementById("username").value;
 			var password = document.getElementById("password").value;
 			
